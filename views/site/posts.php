@@ -8,31 +8,35 @@ use himiklab\thumbnail\EasyThumbnailImage;
 /* @var $searchModel app\modules\blog\models\PostsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Posts';
+$this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="posts-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-
+    <p>
+    <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span> Назад', ['index'], ['class' => 'btn btn-danger']) ?>
     <?php if(!Yii::$app->user->getisGuest()){ ?>
-        <p>
-            <?= Html::a('New Post', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
-    <?php } ?>
 
+
+            <?= Html::a('Создать новый <span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success']) ?>
+
+    <?php } ?>
+    </p>
     <div class="row">
         <?php foreach ($posts as $post){ ?>
 
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="<?=$post->img?>" alt="..." style="width: 380px; height: 220px">
+                    <?php if($post->img){ ?>
+                        <img src="<?=$post->img?>" alt="..." style="width: 380px; height: 220px; opacity: 1">
+                    <?php } ?>
                     <div class="caption">
                         <h3> <?=$post->title?> </h3>
                         <p> <?=$post->text_prev?> </p>
-                        <p> <?= Html::a('Button', ['view', 'id' => $post->id], ['class' => 'btn btn-primary']) ?> </p>
+                        <p> <?= Html::a('<span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>', ['view', 'id' => $post->id], ['class' => 'btn btn-primary']) ?> </p>
+
                     </div>
                 </div>
             </div>

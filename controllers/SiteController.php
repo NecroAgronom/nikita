@@ -54,20 +54,26 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $allPosts = Posts::find();
+
+        $post = Posts::find()->where(['category_id' => 1]);
+        $poem = Posts::find()->where(['category_id' => 2]);
+        $music = Posts::find()->where(['category_id' => 3]);
+        $post_q = $post->count();
+        $poem_q = $poem->count();
+        $music_q = $music->count();
 
 
-        if($allPosts){
 
-            $pages  = new Pagination(['totalCount' => $allPosts->count(), 'pageSize' => 9]);
-            $posts = $allPosts->offset( $pages->offset )->limit( $pages->limit )->all();
 
-            return $this->render('index', [
-                'posts' => $posts,
-                'pages' => $pages
 
-            ]);
-        }
+
+         return $this->render('index',[
+             'posts' => $post_q,
+             'poems' => $poem_q,
+             'music' => $music_q,
+             'p' => $post
+         ]);
+
     }
 
     public function actionPosts(){
@@ -239,5 +245,17 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionDownload($id) {
+
+
+        $file = Posts::findOne(['id' => $id]);
+        if ($file == null) {
+            throw new NotFoundHttpException('Image not found');
+        }
+        return Yii::$app->response->sendFile(Yii::getAlias('@webroot' . $file->aud));
+
+
     }
 }

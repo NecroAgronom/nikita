@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
+use app\models\Category;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\blog\models\Posts */
@@ -23,10 +24,14 @@ use dosamigos\ckeditor\CKEditor;
     <?= $form->field($model, 'text_prev')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'img')->fileInput() ?>
-    <?= $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(\app\modules\blog\models\Category::find()->all(),'id','category'),['prompt' => 'Выбери категорию, бля']) ?>
+    <?= $model->img ?>
+
+    <?= $form->field($model, 'aud')->fileInput() ?>
+    <?= $model->aud ?>
+    <?= $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(Category::find()->all(),'id','category'),['prompt' => 'Выбери категорию, бля']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Создать <span class="glyphicon glyphicon-ok"></span>' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
