@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <?php foreach ($posts as $post){ ?>
 
-            <div class="col-sm-6 col-md-6" >
+            <div class="col-sm-6 col-md-6" style="opacity: 0.8" >
                 <div class="thumbnail">
                     <?php if($post->img){ ?>
                     <img src="<?=$post->img?>" alt="..." style="width: 380px; height: 220px; opacity: 1">
