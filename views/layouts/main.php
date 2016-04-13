@@ -15,6 +15,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <link rel="SHORTCUT ICON" href="/static/favicon.ico" type="image/x-icon">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
@@ -28,8 +29,8 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        //'brandLabel' => 'My Company',
-        //'brandUrl' => Yii::$app->homeUrl,
+        'brandLabel' => 'Oumahnagi',
+        'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'id' => 'main-menu',
             //'class' => ' navbar-fixed-top'
@@ -74,9 +75,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Oumahnagi <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+
     </div>
 </footer>
 

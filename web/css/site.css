@@ -132,7 +132,7 @@ a.desc:after {
     left: 0px;
     right: 0px;
     top: 0px;
-    z-index: 3;
+    z-index: 5;
 
 }
 #main-menu.navbar-default .navbar-nav>li>a {
@@ -183,7 +183,8 @@ a.desc:after {
     background-size: 98%; /* Современные браузеры */
     height: 290px;
     opacity: 0.65;
-    margin-bottom: 10px;
+    transition:all 0.7s ease;
+
 
 
 
@@ -199,6 +200,7 @@ a.desc:after {
     height: 290px;
     opacity: 0.65;
     margin-bottom: 10px;
+    transition:all 0.7s ease;
 
 
 
@@ -212,7 +214,7 @@ a.desc:after {
     background-size: 98%; /* Современные браузеры */
     height: 290px;
     opacity: 0.65;
-    margin-bottom: 10px;
+    transition:all 0.7s ease;
 
 
 
@@ -222,22 +224,27 @@ a.desc:after {
 
     font-size: 50px;
     color: white;
-    padding-left: 41%;
-    padding-top: 110px;
+    padding-left: 38%;
+    padding-top: 96px;
 
 }
 
 #posts:hover{
     opacity: 1;
+    background: orange;
 
 }
 
 #poems:hover{
     opacity: 1;
+    background: darkviolet;
 
 }
 
 #music:hover{
     opacity: 1;
+    background: crimson;
 
 }
+
+
