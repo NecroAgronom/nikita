@@ -97,6 +97,9 @@ class SiteController extends Controller
 
     public function actionMusic(){
 
+
+
+
         $allPosts = Posts::find()->where(['category_id' => 3]);
 
 
@@ -258,4 +261,10 @@ class SiteController extends Controller
 
 
     }
+
+    public function actionDev()
+    {
+        return $this->render('dev');
+    }
+
 }

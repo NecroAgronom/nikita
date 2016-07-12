@@ -40,24 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p> <?=$post->text_prev?> </p>
                         <?php if($post->aud){ ?>
 
-                            <object type="application/x-shockwave-flash"
-                                    style="margin-bottom: 10px"
-                                    data="/static/audios/ump3player_500x70.swf"
-                                    height="70"
-                                    width="470">
-                                <param
-                                    name="wmode"
-                                    value="transparent" />
-                                <param name="allowFullScreen" value="true" />
 
-                                <param name="allowScriptAccess"
-                                       value="always" />
-
-                                <param name="movie"
-                                       value="/static/audios/ump3player_500x70.swf" />
-                                <param name="FlashVars"
-                                       value="way=<?=$post->aud?>&amp;swf=/static/audios/ump3player_500x70.swf&amp;w=270&amp;h=70&amp;time_seconds=164&amp;autoplay=0&amp;q=&amp;skin=sky&amp;volume=60&amp;comment=" />
-                            </object>
                         <?php } ?>
                         <p> <?= Html::a('<span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>', ['view', 'id' => $post->id], ['class' => 'btn btn-primary']) ?> </p>
                     </div>

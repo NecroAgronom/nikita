@@ -7,6 +7,9 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'thumbnail'],
     'components' => [
+        'clientScript'   => array(
+            'class' => 'system.web.CClientScript'
+        ),
         'thumbnail' => [
             'class' => 'himiklab\thumbnail\EasyThumbnail',
             'cacheAlias' => 'assets/gallery_thumbnails',

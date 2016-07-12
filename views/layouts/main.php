@@ -18,15 +18,16 @@ AppAsset::register($this);
     <link rel="SHORTCUT ICON" href="/static/favicon.ico" type="image/x-icon">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>Oumahnagi</title>
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-<div class="wrap">
+<div id="page" data-type="background" data-speed="50"  >
+<div class="wrap" >
     <?php
     NavBar::begin([
         'brandLabel' => 'Oumahnagi',
@@ -67,7 +68,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container" style="margin-top: 50px">
+    <div class="container" style="margin-top: 50px; margin-left: 5%; " >
 
         <?= $content ?>
     </div>
@@ -76,11 +77,12 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; Oumahnagi <?= date('Y') ?></p>
+        <p class="pull-right"> Developed <a href="/site/dev">BY</a> </p>
 
 
     </div>
 </footer>
-
+</div>
 <?php $this->endBody() ?>
 </body>
 </html>
