@@ -63,6 +63,12 @@ class Posts extends \yii\db\ActiveRecord
         ];
     }
 
+    public function incViewed($id){
+        $post = Posts::findOne($id);
+        $post->viewed++;
+        $post->save();
+    }
+
     public function beforeSave($insert){
         if ($this->isNewRecord) {
             //generate & upload

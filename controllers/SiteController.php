@@ -138,6 +138,7 @@ class SiteController extends Controller
 
     public function actionView($id)
     {
+        $this->findModel($id)->incViewed($id);
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
